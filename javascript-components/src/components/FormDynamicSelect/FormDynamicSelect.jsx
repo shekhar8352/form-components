@@ -41,9 +41,9 @@ const FormDynamicSelect = ({
   ...mantineProps
 }) => {
   const [field, meta] = useField(name);
-  
+
   const hasError = meta.touched && meta.error;
-  
+
   // Use the useApiData hook to fetch options from API
   const { data: apiData, loading, error: apiError, refetch } = useApiData(apiUrl, {
     headers: apiHeaders,
@@ -59,12 +59,12 @@ const FormDynamicSelect = ({
     return apiData.map((item, index) => {
       // Handle different data structures
       let value, label;
-      
+
       if (typeof item === 'object' && item !== null) {
         // Use configured keys to extract value and label
         value = item[valueKey];
         label = item[labelKey];
-        
+
         // Fallback if keys don't exist
         if (value === undefined) {
           value = item.id || item.value || index;
@@ -84,7 +84,7 @@ const FormDynamicSelect = ({
       };
     });
   }, [apiData, valueKey, labelKey]);
-  
+
   // Create custom style object that includes width override
   const customStyle = {
     ...style,
@@ -123,11 +123,11 @@ const FormDynamicSelect = ({
       />
       {showApiError && (
         <Text size="sm" c="red" mt={4}>
-          Failed to load options. 
-          <Text 
-            component="span" 
-            size="sm" 
-            c="blue" 
+          Failed to load options.
+          <Text
+            component="span"
+            size="sm"
+            c="blue"
             style={{ cursor: 'pointer', textDecoration: 'underline', marginLeft: 4 }}
             onClick={refetch}
           >

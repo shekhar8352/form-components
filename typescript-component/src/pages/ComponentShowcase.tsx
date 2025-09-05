@@ -1,4 +1,4 @@
-import { Container, Title, Text, Stack, Tabs, Card, Group, Badge } from '@mantine/core';
+import { Container, Title, Text, Stack, Tabs, Card, Group, Badge, Button } from '@mantine/core';
 import { IconComponents, IconCode, IconSettings } from '@tabler/icons-react';
 
 interface Component {

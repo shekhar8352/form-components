@@ -14,7 +14,8 @@ import {
   SimpleGrid,
   Card
 } from '@mantine/core';
-import { Formik, Form, FormikHelpers } from 'formik';
+import { Formik, Form } from 'formik';
+import type { FormikHelpers } from 'formik';
 import * as Yup from 'yup';
 import { IconInfoCircle, IconCheck, IconCode, IconEye, IconBrandTypescript } from '@tabler/icons-react';
 import {
@@ -26,9 +27,9 @@ import {
   FormSearchableSelect,
   FormFileUpload,
   FormRadioGroup,
-  FormDatePicker,
-  SelectOption
+  FormDatePicker
 } from '../components';
+import type { SelectOption } from '../components';
 
 // TypeScript interface for form values
 interface ShowcaseFormValues {
